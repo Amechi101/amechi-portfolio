@@ -7,7 +7,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
+env-amechi-portfolio/
 unlabelenv/
 
 # PyInstaller
@@ -43,3 +43,4 @@ staticfiles
 #other
 node_modules
 package.json
+git@github.com:Amechi101/
