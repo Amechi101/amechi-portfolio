@@ -36,7 +36,6 @@ coverage.xml
 
 # Django stuff:
 *.log
-*.db
 migrations/
 staticfiles
 
