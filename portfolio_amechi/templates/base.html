@@ -1,0 +1,84 @@
+{% load staticfiles %} 
+{% load url from future %}
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html lang="{{ LANGUAGE_CODE }}" class="no-js"><!--<![endif]-->
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="The portfolio of a native New Yorker with Nigerian roots and an alumnus of the University Of Southern California. Seeking the best knowledge he can find around the world."></meta>
+        <meta name="author" content="Amechi Egbe"></meta>
+        <meta name="keywords" content="Portfolio, Technology, Track & Field, USC, Photopgraphy, Nigeria">
+        
+        <title>{% block head_title_base %}Two Sides Of The Hemisphere | {% block head_title %}{% endblock %}{% endblock %}</title>
+
+        <link href="http://www.amechiegbe.com/" rel="canonical"></link>
+        
+        {% block viewport %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        {% endblock %}
+
+        {% block style_base %}
+            {% block extra_style %}{% endblock %}
+        {% endblock %}
+
+        {% block top_script_base %}
+            {% block top_script_extra %} {% endblock %}
+        {% endblock %}
+        
+        {% block html5shim %}
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        {% endblock %}
+
+        {% block extra_head_base %}
+            {% block extra_head %}{% endblock %}
+        {% endblock %}
+    </head>
+    <body class="{% block body_class %}{% endblock %}"> 
+        
+        <div id="meechWrapper" class="">            
+            {% block topbar_base %}
+                <header id="meechHeader">
+                    <div id="nav-icon"></div>
+
+                    <div id="panel">
+                        <div class="nav-cont">
+                            <div class="v-align">
+                                <ul id="main-nav">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="/projects">Projects</a></li>
+                                    <li><a href="/photography">Track & Field</a></li>
+                                    <li><a href="/track-and-field">Photography</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            {% endblock %}
+            
+            
+            <!-- global site content -->
+            <main id="{% block main_container_id %}{% endblock %}" role="main">
+                {% block body %}{% endblock %}
+            </main>
+
+            <!-- Scroll To Top -->
+            <a href="javascript:void(0);" id="scrollTop" style="background:url('{% static "images/gototop.png" %}') no-repeat scroll 0 0 transparent">Scroll Top</a>
+
+        </div>
+
+        <!-- JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        {% block script_base %}
+            {% block extra_script %}
+            {% endblock %}
+        {% endblock %}
+    </body>
+</html>

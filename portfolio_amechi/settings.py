@@ -25,7 +25,7 @@ SECRET_KEY = '23qkmo0t85p1@9ln5*kbj(f59v*f2nha($y(8i@cs7he%sbop3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -36,7 +36,12 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    "django.contrib.sites",
     'django.contrib.staticfiles',
+
+    # project
+    'portfolio_amechi',
+    'contents',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,13 +60,17 @@ ROOT_URLCONF = 'portfolio_amechi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['portfolio_amechi/templates', 'contents/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.core.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -76,14 +85,27 @@ WSGI_APPLICATION = 'portfolio_amechi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "ENGINE": "django.db.backends.postgresql_psycopg2", # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        "NAME":"",
     }
 }
+
+# Parse database configuration from $DATABASE_URL
+if not os.environ.has_key('DATABASE_URL'):
+    os.environ['DATABASE_URL'] = 'postgres://bjqakwgbwwpiku:1-qViTnwizGjnUSgy8ayKvbsZi@ec2-107-22-175-206.compute-1.amazonaws.com:5432/d8hcvi0iaeg64n'
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
+
+SITE_ID = int(os.environ.get("SITE_ID", 1))
 
 LANGUAGE_CODE = 'en-us'
 
@@ -98,5 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR,"static")
 
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+

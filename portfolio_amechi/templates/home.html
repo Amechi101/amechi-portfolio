@@ -1,0 +1,71 @@
+{% extends "site_base.html" %}
+
+{% load url from future %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Home" %}{% endblock %}
+
+{% block body_class %}home{% endblock %}
+
+{% block main_container_id %}meechHome{% endblock %}
+
+{% block body %}   
+    <div class="mainContent">
+        <div class="sqs-layout sqs-grid-12 columns-12">
+            <div class="row sqs-row">
+                <div class="col sqs-col-12 span-12">
+                    <div class="sqs-block code-block sqs-block-code">
+                        <div class="sqs-block-content">
+                            <p class="heading">Engineer. Track Athlete. Creative Junkie.</p>
+                        </div>
+                    </div>
+                    <div class="row sqs-row">
+                        
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block code-block sqs-block-code">
+                                <div class="sqs-block-content">
+                                    <a class="home-link" href="/mini-bio">
+                                        <div class="home-about"> 
+                                            <p>About<span class="icon-like"></span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sqs-block code-block sqs-block-code">
+                                <div class="sqs-block-content">
+                                    <a class="home-link" href="/photography">
+                                        <div class="home-about"> 
+                                            <p>photography<span class="icon-camera"></span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col sqs-col-6 span-6">
+                            <div class="sqs-block code-block sqs-block-code">
+                                <div class="sqs-block-content">
+                                    <a class="home-link" href="/work">
+                                        <div class="home-about"> 
+                                            <p>Projects<span class="icon-lab"></span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sqs-block code-block sqs-block-code">
+                                <div class="sqs-block-content">
+                                    <a class="home-link" href="/track-field">
+                                        <div class="home-about"> 
+                                            <p>Track & Field<span class="icon-stopwatch"></span></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}  
