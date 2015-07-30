@@ -90,7 +90,7 @@ var MeechInitilazer = (function ( core, $, _ ) {
             this.panelTimeline = new TimelineMax({ tweens:[
                 TweenMax.to(this.panel, .7, {x:'0%', ease:Cubic.easeInOut }),
                 new TimelineMax({ tweens:[
-                    TweenMax.allFrom(this.menuItems.find('a'), .35, { y:'100%', ease:Cubic.easeOut }, .06),
+                    TweenMax.allFrom(this.menuItems, .35, { x:'100%', ease:Cubic.easeOut }, .06),
                     TweenMax.allFromTo(this.menuItems.find('a'), .35, { opacity:0 }, { opacity:1, ease:Cubic.easeOut }, .06)
                 ], delay:.6 })
             ], paused:true,
@@ -107,11 +107,8 @@ var MeechInitilazer = (function ( core, $, _ ) {
                     this.tween = false;
                     
                     this.menuHeader.css({position:'relative',height:'0%'});
-
-                
                 }, this) });
 
-            this.panel.data('timeline', this.panelTimeline);
             this.resize();
 
         },
@@ -120,9 +117,11 @@ var MeechInitilazer = (function ( core, $, _ ) {
             var _self = this;
 
             _self.menuIcon.on('click', function( event ) {
+                
                 var target = _.isUndefined( event ) ? _self.menuIcon : $(event.currentTarget);
 
                 if( target.attr('id') == 'nav-icon') {
+                    
                     if (!_self.navopen) {
                        
                         _self.navopen = true;
@@ -133,27 +132,43 @@ var MeechInitilazer = (function ( core, $, _ ) {
                         
                         TweenMax.set(_self.menuIcon, {rotation:0});
                         
-                        } else {
+                    } else {
                             
-                            _self.navopen = !_self.navopen;
-                            _self.tween = true;
-                            
-                            _self.iconTimeline.reverse();
-                            _self.panelTimeline.reverse();
-                            
-                            TweenMax.set(_self.menuIcon, {rotation:0});
+                        _self.navopen = !_self.navopen;
+                        _self.tween = true;
+                        
+                        _self.iconTimeline.reverse();
+                        _self.panelTimeline.reverse();
+                        
+                        TweenMax.set(_self.menuIcon, {rotation:0});
 
-                        }
                     }
+                }
             });
         },
         resize : function () {
 
             var winH = $(window).height();
-            var h = this.navopen ? winH : 0;
+            var heightHeader = this.navopen ? winH : 0;
 
-            this.menuHeader.css({height:h});
+            this.menuHeader.css({height:heightHeader});
             this.menuContainer.css({height:winH});
+        },
+        navigation: function() {
+
+
+
+            // var routes = this.menuItems,
+            //     homeRoute = '/home';
+
+
+            // window.history.pushState({urlPath:homeRoute},"", homeRoute);
+
+            // if( window.location.href + routes != homeRoute && !this.navopen ) return false;
+
+            // // this.toggle();
+            
+            // console.log(routes);
         }
 
     }
