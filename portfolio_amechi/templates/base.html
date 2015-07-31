@@ -62,12 +62,18 @@
             
             
             <!-- global site content -->
-            <main id="{% block main_container_id %}{% endblock %}" role="main">
+            <main id="{% block main_container_id %}meechHome{% endblock %}" role="main">
                 {% block body %}{% endblock %}
             </main>
 
-            <!-- Scroll To Top -->
-            <a href="javascript:void(0);" id="scrollTop">Scroll Top</a>
+            {% block footer_base %}
+                {% block footer %}{% include "_footer.html" %}{% endblock %}
+            {% endblock %}
+
+            {% block scroll %}
+                <!-- Scroll To Top -->
+                <a href="javascript:void(0);" id="scrollTop">Scroll Top</a>
+            {% endblock %}
 
         </div>
 
