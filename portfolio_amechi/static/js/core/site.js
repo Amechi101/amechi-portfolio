@@ -22,6 +22,8 @@ var MeechInitilazer = (function ( core, $, _ ) {
         
         tween: false,
 
+        siteBody: $('body'),
+
         menuHeader: $('#meechHeader'),
         
         menuIcon: $('#nav-icon'),
@@ -64,6 +66,7 @@ var MeechInitilazer = (function ( core, $, _ ) {
             ], paused:true,
                 onStart:_.bind(function () {
                     this.menuHeader.css({position:'fixed'});
+                    this.siteBody.css({overflow:'hidden'});
                     this.resize();
                 }, this),
                 onComplete:_.bind(function () {
@@ -73,8 +76,8 @@ var MeechInitilazer = (function ( core, $, _ ) {
                 }, this),
                 onReverseComplete:_.bind(function () {
                     this.tween = false;
-                    
                     this.menuHeader.css({position:'relative',height:'0%'});
+                    this.siteBody.css({overflow:'visible'});
                 }, this) });
 
             this.resize();
