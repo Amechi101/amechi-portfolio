@@ -1,0 +1,40 @@
+{% extends "site_base.html" %}
+
+{% load url from future %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block head_title %}{% trans "About" %}{% endblock %}
+
+{% block body_class %}about{% endblock %}
+
+{% block banner_title %}
+    <span>About</span> 
+{% endblock %}
+
+{% block body %}   
+    <div class="sqs-block sqs-block-image">
+        <div class="sqs-block-content">
+            <div class="image-block-outer-wrapper">
+                <div class="intrinsic" style="max-width:2500.0px;">
+                    <div class="image-block-wrapper" style="padding-bottom:66.68000030517578%;">
+                        <img alt="about-image-amechi" src="{% static "images/IMG_2725.jpg" %}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sqs-block">
+        <div class="sqs-block-content about">
+            <p>
+                I am native New Yorker with Nigerian roots and an alumnus of the University Of Southern California. I enjoy the thrill of leading a visual lifestyle and having an engineering mindset that spurs creativity. While of course meeting new interesting people along the way. Currently I am training in pursuit of the 2016 Olympic games in RIO.
+            </p>
+            
+            <p>During my spare time when I am not training on the track or programming, you can find me either practicing new dance moves or taking naps.</p>
+
+            <p>I am also an avid supporter of <span class="free-hugs">Free Hugs & Free Friendship.</span></p>
+        </div>
+    </div>
+{% endblock %}  
+

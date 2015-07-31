@@ -10,7 +10,7 @@
         <meta name="author" content="Amechi Egbe"></meta>
         <meta name="keywords" content="Portfolio, Technology, Track & Field, USC, Photopgraphy, Nigeria">
         
-        <title>{% block head_title_base %}Two Sides Of The Hemisphere | {% block head_title %}{% endblock %}{% endblock %}</title>
+        <title>{% block head_title_base %}Amechi Egbe | {% block head_title %}{% endblock %}{% endblock %}</title>
 
         <link href="http://www.amechiegbe.com/" rel="canonical"></link>
         
@@ -48,8 +48,9 @@
                         <div class="nav-cont">
                             <div class="v-align">
                                 <ul id="main-nav">
-                                    <li><a href="/home">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li><a href="/about">About</a></li>
+                                    <li><a href="#">Resume</a></li>
                                     <li><a href="/projects">Projects</a></li>
                                     <li><a href="/photography">Track & Field</a></li>
                                     <li><a href="/track-and-field">Photography</a></li>
@@ -62,17 +63,29 @@
             
             
             <!-- global site content -->
-            <main id="{% block main_container_id %}meechHome{% endblock %}" role="main">
-                {% block body %}{% endblock %}
-            </main>
+            {% block body_base %}
+                <main id="meechInnerWrapper" role="main">
+                    <div class="mainContent">
+                        <div class="sqs-layout">
+                            <div class="row sqs-row">
+                                <div class="col sqs-col-12">
+                                    <div class="sqs-block">
+                                        <div class="sqs-block-content">
+                                            <p class="heading">
+                                                {% block banner_title %}{% endblock %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {% block body %}{% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            {% endblock %}
 
             {% block footer_base %}
                 {% block footer %}{% include "_footer.html" %}{% endblock %}
-            {% endblock %}
-
-            {% block scroll %}
-                <!-- Scroll To Top -->
-                <a href="javascript:void(0);" id="scrollTop">Scroll Top</a>
             {% endblock %}
 
         </div>

@@ -16,38 +16,6 @@ var MeechInitilazer = (function ( core, $, _ ) {
     /***
      *Public Access
      ****/
-    core.scrollTopApi = {
-
-        elScroll: $('#scrollTop'),
-
-        init:function() {
-            this.scrollUp();
-        },
-        scrollUp:function() {
-
-            var _self = this;
-            
-            $(window).scroll(function() {
-                
-                if( $(this).scrollTop() > 100 ) {
-                    _self.elScroll.fadeIn();
-                } else {
-                    _self.elScroll.fadeOut();
-                }
-            
-            });
-
-            _self.elScroll.on('click', function() {
-                
-                $('html, body').animate({
-                    scrollTop:0
-                }, 600);
-               
-                return false;
-            });
-
-        }    
-    },
     core.menuApi = {
 
         navopen: false,
