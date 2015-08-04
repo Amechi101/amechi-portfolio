@@ -8,11 +8,32 @@
 
 {% block body_class %}project{% endblock %}
 
-{% block banner_title %}
-    <span>Projects</span> 
-{% endblock %}
+{% block banner_title %}Projects{% endblock %}
 
 {% block body %}   
-   
+   {% for project_info in projects %} 
+    <div class="projectWrapper">
+               
+        <div class="projectDetail">
+            <h2>{{project_info.project_name}}</h2>
+            <p>{{project_info.project_description}}</p>
+        </div>
+
+        <div class="projectExtra">
+            <h5>Role</h5>
+            {% for role in project_info.role_set.all %}
+                <p>- {{role}}</p>
+            {% endfor %}
+            <h5>Tech</h5>
+            {% for tech in project_info.technologies_set.all %}
+                <p>- {{tech}}</p>
+            {% endfor %} 
+        </div>
+             
+        <a class="meechBtn" href="{{project_info.project_url}}" target="_blank">View Project</a>
+    </div>
+   {% endfor %} 
+
+
 {% endblock %}  
 

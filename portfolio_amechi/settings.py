@@ -13,6 +13,16 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config( 
+    cloud_name = "dgnor2lpz", 
+    api_key = "463883452921454", 
+    api_secret = "UCYPu13LdP_aTBoobktzEJQETVA" 
+)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -38,6 +48,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     "django.contrib.sites",
     'django.contrib.staticfiles',
+
+    # External
+    'cloudinary',
 
     # project
     'portfolio_amechi',
@@ -72,6 +85,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.core.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
+
+                # Externally Added
+                'portfolio_amechi.context_processors.consts',
             ],
         },
     },

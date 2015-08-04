@@ -24,17 +24,22 @@
 
 
 {% block script_base %}
-    <!--Core-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>  
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>  
     <script src="{% static "js/lib/underscore-min.js" %}"></script> 
-    <script src="{% static "js/core/site.js" %}"></script>  
+    <script src="{% static "js/lib/classie.js" %}"></script>
+    <script src="{% static "js/lib/masonry.pkgd.min.js" %}"></script>
+    <script src="{% static "js/lib/imagesloaded.js" %}"></script>
+    <script src="{% static "js/lib/AnimOnScroll.js" %}"></script>
+    <script src="{% static "js/core/site.js" %}"></script>
+    <script>
+		MeechInitilazer.menuApi.init();
+		// MeechInitilazer.pageTransitionApi.init();
+	</script>
+ 
 
     {% block extra_script %}
-	    <script>
-		    MeechInitilazer.menuApi.init();
-		    MeechInitilazer.scrollTopApi.init();
-	    </script>
+	    
 
     {% endblock %}
 

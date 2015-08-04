@@ -48,12 +48,12 @@
                         <div class="nav-cont">
                             <div class="v-align">
                                 <ul id="main-nav">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/about">About</a></li>
-                                    <li><a href="#">Resume</a></li>
-                                    <li><a href="/projects">Projects</a></li>
-                                    <li><a href="/photography">Track & Field</a></li>
-                                    <li><a href="/track-and-field">Photography</a></li>
+                                    <li><a class="menu-link" href="/" data-type="page-transition">Home</a></li>
+                                    <li><a class="menu-link" href="/about" data-type="page-transition">About</a></li>
+                                    <li><a class="menu-link" href="resume.pdf">Resume</a></li>
+                                    <li><a class="menu-link" href="/projects">Projects</a></li>
+                                    <li><a class="menu-link" href="/track">Track & Field</a></li>
+                                    <li><a class="menu-link" href="/photography">Photography</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -69,14 +69,16 @@
                         <div class="sqs-layout">
                             <div class="row sqs-row">
                                 <div class="col sqs-col-12">
-                                    <div class="sqs-block">
-                                        <div class="sqs-block-content">
-                                            <p class="heading">
-                                                {% block banner_title %}{% endblock %}
-                                            </p>
+                                    <div class="sqs-switch-content">
+                                        <div class="sqs-block">
+                                            <div class="sqs-block-content">
+                                                <h1 class="meechHeading">
+                                                    {% block banner_title %}{% endblock %}
+                                                </h1>
+                                            </div>
                                         </div>
+                                        {% block body %}{% endblock %}
                                     </div>
-                                    {% block body %}{% endblock %}
                                 </div>
                             </div>
                         </div>
@@ -87,6 +89,9 @@
             {% block footer_base %}
                 {% block footer %}{% include "_footer.html" %}{% endblock %}
             {% endblock %}
+
+            <div class="cd-cover-layer"></div>
+            <div class="cd-loading-bar"></div>
 
         </div>
 

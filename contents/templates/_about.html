@@ -3,22 +3,21 @@
 {% load url from future %}
 {% load staticfiles %}
 {% load i18n %}
+{% load cloudinary %}
 
 {% block head_title %}{% trans "About" %}{% endblock %}
 
 {% block body_class %}about{% endblock %}
 
-{% block banner_title %}
-    <span>About</span> 
-{% endblock %}
+{% block banner_title %}About{% endblock %}
 
-{% block body %}   
+{% block body %} 
     <div class="sqs-block sqs-block-image">
         <div class="sqs-block-content">
             <div class="image-block-outer-wrapper">
                 <div class="intrinsic" style="max-width:2500.0px;">
                     <div class="image-block-wrapper" style="padding-bottom:66.68000030517578%;">
-                        <img alt="about-image-amechi" src="{% static "images/IMG_2725.jpg" %}" />
+                        <img alt="about-image-amechi" src="http://res.cloudinary.com/dgnor2lpz/image/upload/v1438404603/IMG_2725_ashgmt.jpg" />
                     </div>
                 </div>
             </div>
