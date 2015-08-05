@@ -3,7 +3,7 @@
 {% load url from future %}
 {% load staticfiles %}
 {% load i18n %}
-{% load cloudinary %}
+z
 
 {% block head_title %}{% trans "About" %}{% endblock %}
 
@@ -12,27 +12,64 @@
 {% block banner_title %}About{% endblock %}
 
 {% block body %} 
-    <div class="sqs-block sqs-block-image">
-        <div class="sqs-block-content">
-            <div class="image-block-outer-wrapper">
-                <div class="intrinsic" style="max-width:2500.0px;">
-                    <div class="image-block-wrapper" style="padding-bottom:66.68000030517578%;">
-                        <img alt="about-image-amechi" src="http://res.cloudinary.com/dgnor2lpz/image/upload/v1438404603/IMG_2725_ashgmt.jpg" />
+    <div class="section-white-bg">
+        <div class="row">
+            <div class="col-sm-12">
+                
+                <!-- First Block -->
+                <div class="home-grid-item">
+                    <div class="home-grid-item-half">
+                        <span class="home-grid-item-arrow"></span>
+
+                        <div class="home-grid-item-block home-grid-item-block-post">
+                            <h2 class="home-grid-post-title">25 Years Old</h2>
+                        </div>
+                    </div>
+
+                    <div class="home-grid-item-half home-grid-item-post-image"
+                    style=
+                    "background-image: url('http://res.cloudinary.com/dgnor2lpz/image/upload/v1438806985/11183437_10153655101645101_8771020515928447236_n_fdslwe.jpg');">
                     </div>
                 </div>
+                
+                <!-- Second Block -->
+                <div class="home-grid-item pull-right swap">
+                    <div class="home-grid-item-half">
+                        <span class="home-grid-item-arrow"></span>
+
+                        <div class="home-grid-item-block home-grid-item-block-post">
+                            <h2 class="home-grid-post-title">Olympic Aspirations</h2>
+                        </div>
+                    </div>
+
+                    <div class="home-grid-item-half home-grid-item-post-image" style="background-image: url('http://res.cloudinary.com/dgnor2lpz/image/upload/v1438813394/25085_384821240100_4070240_n_weib0e.jpg');">
+                    </div>
+                </div>
+
+                <!-- Image Block -->
+                <!-- <div class="home-grid-item">
+                    <div class="home-grid-item-half" style="background-image: url('http://res.cloudinary.com/dgnor2lpz/image/upload/v1438813395/308301_10150360422735101_67342114_n_w0ycvq.jpg');">
+                    </div> 
+
+                    
+                    <div class="home-grid-item-half" style="background-image: url('http://res.cloudinary.com/dgnor2lpz/image/upload/v1438813394/305312_10150342014275101_2139506343_n_ek97wk.jpg');">
+                    </div>
+                </div> -->
+
+                <div class="home-grid-item">
+                    <div class="home-grid-item-half">
+                        <span class="home-grid-item-arrow"></span>
+
+                        <div class="home-grid-item-block home-grid-item-block-post">
+                            <h2 class="home-grid-post-title">Dancer Enthusiast</h2>
+                        </div>
+                    </div>
+
+                    <div class="home-grid-item-half home-grid-item-post-image" style="background-image: url('http://res.cloudinary.com/dgnor2lpz/image/upload/v1438813765/11295705_10153596958740101_2435505152554157340_n_nibttn.jpg');">
+                    </div>
+                </div>
+
             </div>
-        </div>
-    </div>
-
-    <div class="sqs-block">
-        <div class="sqs-block-content about">
-            <p>
-                I am native New Yorker with Nigerian roots and an alumnus of the University Of Southern California. I enjoy the thrill of leading a visual lifestyle and having an engineering mindset that spurs creativity. While of course meeting new interesting people along the way. Currently I am training in pursuit of the 2016 Olympic games in RIO.
-            </p>
-            
-            <p>During my spare time when I am not training on the track or programming, you can find me either practicing new dance moves or taking naps.</p>
-
-            <p>I am also an avid supporter of <span class="free-hugs">Free Hugs & Free Friendship.</span></p>
         </div>
     </div>
 {% endblock %}  

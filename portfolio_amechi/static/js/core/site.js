@@ -167,15 +167,14 @@ var MeechInitilazer = (function ( core, $, _ ) {
             
             this.menuIcon.append($('<div class="icon-bounds" >'));
 
-            // close icons
+            // close icon
             this.iconTimeline = new TimelineMax({ tweens:[
 
-                TweenMax.fromTo(this.iconTline, .4, {y:'-3%'}, { rotation:-45, y:0, top:'50%',background:'#FFFFFF', ease:Cubic.easeOut }),
+                TweenMax.fromTo(this.iconTline, .4, {y:'-3%'}, { rotation:-45, y:0, top:'50%', ease:Cubic.easeOut }),
                 TweenMax.to(this.iconMline, .3, { width:'0%', opacity:0, ease:Cubic.easeOut }),
-                TweenMax.fromTo(this.iconBline, .4, {y:'3%'}, { rotation:45, y:0, top:'50%',background:'#FFFFFF', ease:Cubic.easeOut })
+                TweenMax.fromTo(this.iconBline, .4, {y:'3%'}, { rotation:45, y:0, top:'50%', ease:Cubic.easeOut })
             
             ], paused:true });
-
 
             // nav open
             this.panelTimeline = new TimelineMax({ tweens:[
@@ -263,6 +262,33 @@ var MeechInitilazer = (function ( core, $, _ ) {
             // console.log(routes);
         }
 
+    },
+    core.scrollTopApi = {
+
+        elScroll: $('#scrollTop'),
+        
+        init:function() {
+            this.scrollTop();
+        },
+        scrollTop:function() {
+            
+            var _self = this;
+            
+            $(window).scroll(function() {
+                if( $(this).scrollTop() > 100 ) {
+                    _self.elScroll.fadeIn();
+                } else {
+                    _self.elScroll.fadeOut();
+                }
+            });
+
+            _self.elScroll.on('click', function() {
+                $('html, body').animate({
+                    scrollTop:0
+                }, 600);
+                return false;
+            });
+        }
     }
 
     //Return Public Method
