@@ -16,10 +16,8 @@
         <div class="photo-grid">
             <div class="content">
                 <div class="photo-table">
-                    <div class="table-cell" style="height:100%; width:100%;">
-                        <div class="photo-tint" style="background: url('{% cloudinary_url album.cover_image %}') center center no-repeat; background-size: cover;">  
-                        </div>
-                        
+                    <div class="photo-tint" style="background: url('{% cloudinary_url album.cover_image %}') center center no-repeat; background-size: cover;"> </div>
+                    <div class="table-cell">    
                         <label>{{album.album_name}}</label>
                         <a class="box-button" href="{{album.get_absolute_url}}">View</a>
                     </div>

@@ -987,17 +987,15 @@ h1 {
 }
 
 .photography .photo-grid .photo-table{
+    position: relative;
     display:table;
     height:100%;
     width:100%;
 }
 
 .photography .photo-grid .table-cell{
-    position: relative;
     display:table-cell;
     vertical-align:middle;
-    height:100%;
-    width:100%;
 }
 
 
@@ -1028,7 +1026,7 @@ h1 {
      transition:all 0.3s ease
 }
 
-.photography .table-cell:hover .box-button  {
+.photography .photo-table:hover .box-button  {
     visibility:visible;
     opacity:1;
     top:-1em;
@@ -1053,20 +1051,20 @@ h1 {
     top:0%
 }
 
-.photography .table-cell:hover .photo-tint{
+.photography .photo-table:hover .photo-tint{
     width:100%;
     height:100%;
     opacity:1;
     transition:all 0.3s ease
 }
 
-.photography .table-cell:hover label{
+.photography .photo-table:hover label{
     top:0.5em;
     transition:all 0.3s ease;
     opacity:0
 }
 
-.photography .table-cell:hover .box-button{
+.photography .photo-table:hover .box-button{
     visibility:visible;
     opacity:1;
     top:-1em;
@@ -1098,7 +1096,7 @@ h1 {
         top:0.9em
     }
 
-    .photography .table-cell:hover .box-button{
+    .photography .photo-table:hover .box-button{
        top:-1em
     }
 }
