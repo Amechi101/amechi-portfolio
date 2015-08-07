@@ -139,6 +139,7 @@ Footer
 #scrolling {
     position:relative;
     text-align:center;
+    padding-top:40px;
 }
 
 #scrolling a {
@@ -682,7 +683,8 @@ h1 {
 .home .home-about{
     position: relative;
     width: 100%;
-    height:300px;
+    height:100px;
+    line-height:2px;
     text-align:center;
     background: rgb(18,194,134);
     color: rgb(0,0,0);
@@ -694,64 +696,83 @@ h1 {
     transition:all 0.8s ease;
 }
 
-.home .home-about:hover {
-    border: 4px solid rgb(18, 194, 134);
-    background: rgb(0,0,0);
-}
 
 .home .home-about p {
     position:relative;
     text-transform:uppercase;
-     top:50%;
+    top:50%;
     color:white;
     font-size:1.5em;
 }
 
 .home .home-about span{
     position:absolute;
-    top: 130%;
-    left: 0%;
+    top: 20px;
+    left: 0;
     right:0;
-    margin:0 auto;
-    color:#000;
-}
-
-.home .home-about span {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: all 0.45s ease-in-out;
-    -ms-transition: all 0.45s ease-in-out;
-    -moz-transition: all 0.45s ease-in-out;
-    -o-transition: all 0.45s ease-in-out;
-    transition: all 0.45s ease-in-out;
+    color:#FFF;
 }
 
 
-.home .home-about:hover span{
-   opacity: 1;
-   visibility: visible;
-   color:#fff;
+@media only screen and (max-width:640px) {
+    .home .meechHeading span{
+        display: block;
+        line-height: 1.6em;
+    }  
 }
-  
-  
-.home .home-about:hover span{
-    -webkit-animation-name: move-up;
-    -moz-animation-name: move-up;
-    -ms-animation-name: move-up;
-    -o-animation-name: move-up;
-    animation-name: move-up;
 
-    -webkit-animation-duration: 0.7s;
-    -moz-animation-duration: 0.7s;
-    -ms-animation-duration: 0.7s;
-    -o-animation-duration: 0.7s; 
-    animation-duration: 0.7s;
+@media only screen and (min-width:640px) {
+    .home .home-about{
+        height:300px;
+    }
 
-    -webkit-animation-iteration-count: 1;
-    -moz-animation-iteration-count: 1;
-    -ms-animation-iteration-count: 1;
-    -o-animation-iteration-count: 1;
-    animation-iteration-count: 1;
+
+    .home .home-about:hover {
+        border: 4px solid rgb(18, 194, 134);
+        background: rgb(0,0,0);
+    }
+
+    .home .home-about span{
+        color:#000;
+    }
+
+    .home .home-about span {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.45s ease-in-out;
+        -ms-transition: all 0.45s ease-in-out;
+        -moz-transition: all 0.45s ease-in-out;
+        -o-transition: all 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out;
+    }
+
+    .home .home-about:hover span{
+       opacity: 1;
+       visibility: visible;
+       color:#fff;
+    }
+
+
+    .home .home-about:hover span{
+        -webkit-animation-name: move-up;
+        -moz-animation-name: move-up;
+        -ms-animation-name: move-up;
+        -o-animation-name: move-up;
+        animation-name: move-up;
+
+        -webkit-animation-duration: 0.7s;
+        -moz-animation-duration: 0.7s;
+        -ms-animation-duration: 0.7s;
+        -o-animation-duration: 0.7s; 
+        animation-duration: 0.7s;
+
+        -webkit-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -ms-animation-iteration-count: 1;
+        -o-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
+
 }
 
 @keyframes move-up {
@@ -839,19 +860,11 @@ h1 {
 }
 
 
-@media only screen and (max-width:640px) {
-    .home .meechHeading span{
-        display: block;
-        line-height: 1.6em
-    }
-}
-
-
 /* ==============================
     About
    ============================== */
 
-.home-grid-item{
+.about .about-grid-item{
     background-color:rgb(18,194,134);
     float:left;
     width:100%;
@@ -860,14 +873,13 @@ h1 {
 }
 
 @media (min-width:768px){
-    .home-grid-item{
+    .about .about-grid-item{
         width:50%;
         padding-bottom:25%
     }
-
 }
 
-.home-grid-item-arrow{
+.about .about-grid-item-arrow{
     width:0;
     height:0;
     border-top:8px solid transparent;
@@ -880,13 +892,13 @@ h1 {
     z-index:1
 }
 
-.swap .home-grid-item-arrow{
+.about .swap .about-grid-item-arrow{
     left:-8px;
     border-left:0;
     border-right:8px solid #FFF
 }
 
-.home-grid-item-block{
+.about .about-grid-item-block{
     top:auto;
     right:0;
     bottom:0;
@@ -894,40 +906,12 @@ h1 {
     position:absolute
 }
 
-.home-grid-item-block-post{
+.about .about-grid-item-block-post{
     margin:28px 16px
 }
 
-@media (min-width:480px){
-    .home-grid-item-block-post{
-        margin:32px 24px
-    }
 
-}
-
-@media (min-width:768px){
-    .home-grid-item-block-post{
-        margin:32px 20px
-    }
-
-}
-
-@media (min-width:1024px){
-    .home-grid-item-block-post{
-        margin:44px 24px
-    }
-
-}
-
-@media (min-width:1280px){
-    .home-grid-item-block-post{
-        margin:50px 24px
-    }
-
-}
-
-
-.home-grid-item-half{
+.about .about-grid-item-half{
     background-position:center;
     background-size:cover;
     height:100%;
@@ -936,31 +920,59 @@ h1 {
     width:50%
 }
 
-.home-grid-item-half:last-child{
+.about .about-grid-item-half:last-child{
     left:auto;
     right:0
 }
 
-.swap .home-grid-item-half{
+.about .swap .about-grid-item-half{
     left:auto;
     right:0
 }
 
-.swap .home-grid-item-half:last-child{
+.about .swap .about-grid-item-half:last-child{
     right:auto;
     left:0
 }
 
 
-.home-grid-post-title{
-    font-weight:500;
+.about .about-grid-post-title{
+    font-weight:bold;
     font-size:14px;
     color:#FFF;
     line-height:18px;
 }
 
 @media (min-width:480px){
-    .home-grid-post-title{
+    .about .about-grid-item-block-post{
+        margin:32px 24px
+    }
+
+}
+
+@media (min-width:768px){
+    .about .about-grid-item-block-post{
+        margin:32px 20px
+    }
+
+}
+
+@media (min-width:1024px){
+    .about .about-grid-item-block-post{
+        margin:44px 24px
+    }
+
+}
+
+@media (min-width:1280px){
+    .about .about-grid-item-block-post{
+        margin:50px 24px
+    }
+
+}
+
+@media (min-width:480px){
+    .about .about-grid-post-title{
         letter-spacing:.025em;
         font-size:17px;
         line-height:20px
@@ -969,7 +981,7 @@ h1 {
 }
 
 @media (min-width:768px){
-    .home-grid-post-title{
+    .about .about-grid-post-title{
         letter-spacing:.025em;
         font-size:15px
     }
@@ -977,8 +989,8 @@ h1 {
 }
 
 @media (min-width:1024px){
-    .home-grid-post-title{
-        font-size:18px;
+    .about .about-grid-post-title{
+        font-size:15px;
         line-height:24px
     }
 
@@ -1032,6 +1044,19 @@ h1 {
 /* ==============================
    Track
    ============================== */
+
+.track ul.gridAwards {
+    margin:0;
+   padding:10px;
+    text-align:center;
+}
+
+.track ul.gridAwards li{
+    list-style:none;
+    font-size:1.3em;
+    font-weight:500;
+    padding:0 0 10px;
+}
 
 .track .grid {
     max-width:69em;
@@ -1094,8 +1119,275 @@ h1 {
 }
 }
 
+@media screen and (max-width: 640px) {
+.track ul.gridAwards li{
+    font-size:1.0em;
+}
+
+}
+
 @media screen and (max-width: 400px) {
 .track .grid li {
+    width:100%
+}
+}
+
+
+/* ==============================
+   Photography
+   ============================== */
+
+/* album */
+.photography .photo-grid {
+    position: relative;
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    padding-bottom: 50%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.photography .photo-grid .content {
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:100%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+    text-align: center;
+}
+
+.photography .photo-grid .photo-table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+
+.photography .photo-grid .table-cell{
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+    width:100%;
+}
+
+
+.photography .photo-grid .box-button {
+    display:block;
+    visibility:hidden;
+    position:relative;
+    z-index:12;
+    top:0;
+    opacity:0;
+    width:12em;
+    margin:auto;
+    transition:all .3s ease
+}
+
+.photography .photo-grid .box-button,.photography .photo-grid .box-button:visited {
+    border:2px solid #fff;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:3px;
+    color:#fff;
+    text-transform:uppercase;
+    text-align:center;
+    padding:10px 20px;
+    text-shadow:none;
+    text-decoration:none;
+    display:inline-block
+}
+
+.photography .photo-table:hover .box-button  {
+    visibility:visible;
+    opacity:1;
+    top:-1em;
+    transition:all .3s ease
+}
+
+.no-touch .photography .photo-grid .box-button:hover {
+    background:#fff;
+    color:#000
+}
+
+
+.photography .photo-grid .photo-tint{
+    opacity:0.5;
+    position:absolute;
+    height:100%;
+    width:100%;
+    z-index:0;
+    display:block;
+    transition:all 0.3s ease-in;
+    left:0%;
+    top:0%
+}
+
+.photography .photo-grid:hover .photo-tint{
+    width:108%;
+    height:108%;
+    opacity:1;
+    transition:all 0.3s ease
+}
+
+.photography .photo-table:hover label{
+    top:0.5em;
+    transition:all 0.3s ease;
+    opacity:0
+}
+
+.photography .photo-table:hover .box-button{
+    visibility:visible;
+    opacity:1;
+    top:-1em;
+    transition:all 0.3s ease
+}
+
+
+.photography .photo-table label{
+    font-weight:bold;
+    font-size:24px;
+    letter-spacing:1px;
+    color:#fff;
+    transition:all 0.3s ease;
+    display:inline-block;
+    position:relative;
+    z-index:8;
+    top:1.5em;
+    width:100%;
+    line-height:1.3
+}
+
+.photography .photo-table a:hover{
+    opacity:0.7;
+    transition:opacity 0.3s ease
+}
+
+.photography .photo-table a[data-href]{
+    cursor:pointer
+}
+
+@media only screen and (max-width: 600px){
+    .photography .photo-table label{
+        top:0.9em
+    }
+
+    .photography .photo-table:hover a.box-button{
+       top:-1em
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .photography .photo-grid {
+        width:100%;
+        padding-bottom:100%;
+        padding-left:0;
+        padding-right:0;
+    }
+}
+
+
+@media only screen and (max-width: 35.5em){
+    .photography .photo-table a{
+      top:10%
+    }
+}
+
+
+/* Photos */
+.album .albumBtn {
+    position:relative;
+    text-align: center;
+}
+
+.album .grid {
+    max-width:69em;
+    list-style:none;
+    margin:30px auto;
+    padding:0
+}
+
+.album .grid li {
+    display:block;
+    float:left;
+    padding:7px;
+    width:33%;
+    opacity:0
+}
+
+.album .grid li.shown,.no-js .track .grid li, .no-cssanimations .track .grid li {
+    opacity:1
+}
+
+.album .grid li img {
+    outline:none;
+    border:none;
+    display:block;
+    max-width:100%
+}
+
+
+.album .grid-info {
+    padding:5% 10% 12%;
+    text-align:center
+}
+
+.album .grid-photo-title {
+    font-weight:700;
+    color:#000
+}
+
+.album .grid-photo-title {
+    font-size:14px
+}
+
+
+
+.album .grid.effect-2 li.animate {
+    -webkit-transform:translateY(200px);
+    transform:translateY(200px);
+    -webkit-animation:moveUp .65s ease forwards;
+    animation:moveUp .65s ease forwards
+}
+
+@-webkit-keyframes moveUp {
+0% {
+}
+
+100% {
+    -webkit-transform:translateY(0);
+    opacity:1
+}
+}
+
+@keyframes moveUp {
+0% {
+}
+
+100% {
+    -webkit-transform:translateY(0);
+    transform:translateY(0);
+    opacity:1
+}
+}
+
+@media only screen and (max-width:767px) {
+.album .grid-info {
+    padding:18px 32px 40px
+}
+
+.album .grid-info .grid-photo-title {
+    font-size:13px
+}
+}
+
+
+@media screen and (max-width: 900px) {
+.album .grid li {
+    width:50%
+}
+}
+
+@media screen and (max-width: 400px) {
+.album .grid li {
     width:100%
 }
 }
@@ -1128,6 +1420,10 @@ h1 {
 #preFooter .meechIconRow span {
     color:#FFF;
     font-size:32px;
+}
+
+#preFooter .meechIconRow .icon-instagram {
+    font-size:24px !important;
 }
 
 #preFooter .meechIconRow .icon-social-facebook,

@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     # project
     'portfolio_amechi',
     'contents',
+    'photography',
 )
 
 MIDDLEWARE_CLASSES = (

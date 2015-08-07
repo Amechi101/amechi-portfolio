@@ -5,7 +5,6 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 from django.utils.translation import ugettext_lazy as _
 
-import datetime
 
 class Project(models.Model):
     """
@@ -62,6 +61,7 @@ class Role(models.Model):
     #Metadata
     class Meta: 
         verbose_name = _('Role')
+        verbose_name_plural = _('Project Roles')
 
     def __unicode__(self):
         return "{0}".format( self.role )
@@ -89,6 +89,7 @@ class Technologies(models.Model):
     #Metadata
     class Meta: 
         verbose_name = _('Tech')
+        verbose_name_plural = _('Tech Roles')
 
     def __unicode__(self):
         return "{0}".format( self.technologies )
@@ -102,23 +103,6 @@ class Technologies(models.Model):
 
     def get_parents(self):
         return ",".join([str(p) for p in self.project_tech.all()])
-
-
-class Photography(models.Model):
-    """
-    Photograpy 
-    """
-
-    # Points to a Cloudinary image
-    photos_general = CloudinaryField('Photography', max_length=255, null=True, blank=True)
-    
-    #For Admin Purposes, to keep track of new and old items in the database by administrative users
-    date_added = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name=_('Date added'))
-    last_modified = models.DateTimeField(auto_now=True, null=True, blank=True, verbose_name=_('Last modified') )
-
-    #Metadata
-    class Meta: 
-        verbose_name = _('Photograpy')
 
 
 class Track(models.Model):
@@ -137,6 +121,7 @@ class Track(models.Model):
     #Metadata
     class Meta: 
         verbose_name = _('Track')
+        verbose_name_plural = _('Track Photos')
 
     def __unicode__(self):
         return "{0}".format( self.track_photos )

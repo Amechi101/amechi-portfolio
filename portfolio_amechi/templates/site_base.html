@@ -8,6 +8,7 @@
     <!-- Stylesheets for Unlabel -->
     <link rel="stylesheet" href="{% static "css/core/base.min.css" %}" />
     <link rel="stylesheet" href="{% static "css/core/site.css" %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.min.css" />
     
     {% block extra_style %}{% endblock %}
 {% endblock %}
@@ -25,7 +26,8 @@
 
 {% block script_base %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>  
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.min.js"></script>  
     <script src="{% static "js/lib/underscore-min.js" %}"></script> 
     <script src="{% static "js/lib/classie.js" %}"></script>
     <script src="{% static "js/lib/masonry.pkgd.min.js" %}"></script>
@@ -35,8 +37,31 @@
     <script>
 		MeechInitilazer.menuApi.init();
         MeechInitilazer.scrollTopApi.init();
-		// MeechInitilazer.pageTransitionApi.init();
 	</script>
+    <script>
+        ;(function($) {
+            $(".animsition").animsition({
+                inClass               :   'fade-in-up-sm',
+                outClass              :   'fade-out-up-sm',
+                inDuration            :    700,
+                outDuration           :    800,
+                linkElement           :   '.animsition-link',
+                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+                loading               :    true,
+                loadingParentElement  :   'body', //animsition wrapper element
+                loadingClass          :   'animsition-loading',
+                unSupportCss          : [ 'animation-duration',
+                                          '-webkit-animation-duration',
+                                          '-o-animation-duration'
+                                        ],
+                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+                overlay               :   false,
+                overlayClass          :   'animsition-overlay-slide',
+                overlayParentElement  :   'body'
+            });
+        })(jQuery);
+    </script>
  
 
     {% block extra_script %}

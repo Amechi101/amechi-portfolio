@@ -5,31 +5,31 @@
 {% load i18n %}
 {% load cloudinary %}
 
-{% block head_title %}{% trans "Photography" %}{% endblock %}
+{% block head_title %}{% trans "Albums" %}{% endblock %}
 
 {% block body_class %}photography{% endblock %}
 
-{% block banner_title %}Photography{% endblock %}
+{% block banner_title %}Albums{% endblock %}
 
 {% block body %}  
-    <ul class="grid effect-2" id="grid">
-        {% for photo in photos %} 
-            <li>
-                <img src="{% cloudinary_url photo.photos_general %}" />
-            </li>
-        {% endfor %} 
-    </ul>
+    {% for album in album_list %}  
+        <div class="photo-grid">
+            <div class="content">
+                <div class="photo-table">
+                    <div class="table-cell">
+                        <div class="photo-tint" style="background: url('{% cloudinary_url album.cover_image %}') center center no-repeat; background-size: cover;">  
+                        </div>
+                        
+                        <label>{{album.album_name}}</label>
+                        <a class="box-button" href="{{album.get_absolute_url}}">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %} 
 
-{% block extra_script %}
-    <script>
-        new AnimOnScroll( document.getElementById( 'grid' ), {
-            minDuration : 0.4,
-            maxDuration : 0.7,
-            viewportFactor : 0.2
-        });
-    </script>
-{% endblock %} 
+
 
 
 

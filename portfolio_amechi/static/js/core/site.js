@@ -17,126 +17,6 @@ var MeechInitilazer = (function ( core, $, _ ) {
      *Public Access
      ****/
 
-    core.pageTransitionApi = {
-       
-        isAnimating: false,
-        
-        firstLoad: false,
-
-        bodyTag: $('body'),
-
-        loadingBar: $('.cd-loading-bar'),
-
-        siteWrapper: $('#meechWrapper'),
-
-        loadingContainer: $('.sqs-switch-content'),
-
-        init: function() {
-            this.trigger();
-        },
-        trigger: function() {
-            var _self = this;
-            
-            _self.siteWrapper.on('click', '[data-type="page-transition"]', function( event ) {
-                
-                event.preventDefault();
-
-                //shows the current route of the page
-                var newPage = $(this).attr('href');
-
-                if( !_self.isAnimating ) _self.changePage( newPage, true );
-            
-                
-                _self.firstLoad = true;
-
-            });
-
-            
-            //detect the 'popstate' event - e.g. user clicking the back button
-            $(window).on('popstate', function() {
-                
-                if( _self.firstLoad ) {
-                  /*
-                  Safari emits a popstate event on page load - check if firstLoad is true before animating
-                  if it's false - the page has just been loaded 
-                  */
-                  var newPageArray = location.pathname.split(),
-                    //this is the url of the page to be loaded 
-                    newPage = newPageArray[newPageArray.length - 1];
-                  if( !_self.isAnimating ) _self.changePage(newPage, false);
-                
-                }
-               
-                _self.firstLoad = true;
-            
-            });
-        },
-        changePage: function( url, bool ) {
-            var _self = this;
-
-            _self.isAnimating = true;
-
-            _self.bodyTag.addClass('page-is-changing');
-
-            _self.loadingBar.on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-                
-                _self.loadNewContent( url, bool );
-                
-                _self.loadingBar.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-
-            });
-
-            if( !_self.transitionsSupported() ) isAnimating = false;
-
-        },
-        loadNewContent: function( url, bool ) {
-            var _self = this;
-
-            url = ( '' == url ) ? '/' : url;
-
-            var newSection = 'sqs-page-' + url.slice(1),
-                currentSection = $('<div class="'+ newSection +'"></div>');
-
-                console.log(url, newSection);
-
-                currentSection.load( url + ' .sqs-switch-content > *', function( event ) {
-
-            
-                    _self.loadingContainer.html(currentSection);
-                    
-                    //if browser doesn't support CSS transitions - dont wait for the end of transitions
-                    var delay = ( _self.transitionsSupported() ) ? 1200 : 0;
-                    
-                    setTimeout(function(){
-
-                        $('body').removeClass('page-is-changing');
-                        
-                        $('.cd-loading-bar').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-                          
-                            _self.isAnimating = false;
-                         
-                            $('.cd-loading-bar').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-                        
-                        });
-
-                        if( !_self.transitionsSupported() ) _self.isAnimating = false;
-                    
-                    }, delay);
-
-                    if( url != window.location && bool ){
-                        
-                        //add the new page to the window.history
-                        //if the new page was triggered by a 'popstate' event, don't add it
-                        window.history.pushState({path: url},'',url);
-                    }
-                
-                });
-        },
-        transitionsSupported: function() {
-            return $('html').hasClass('csstransitions');
-        }
-
-    },
     core.menuApi = {
 
         navopen: false,
@@ -244,22 +124,6 @@ var MeechInitilazer = (function ( core, $, _ ) {
 
             this.menuHeader.css({height:heightHeader});
             this.menuContainer.css({height:winH});
-        },
-        navigation: function() {
-
-
-
-            // var routes = this.menuItems,
-            //     homeRoute = '/home';
-
-
-            // window.history.pushState({urlPath:homeRoute},"", homeRoute);
-
-            // if( window.location.href + routes != homeRoute && !this.navopen ) return false;
-
-            // // this.toggle();
-            
-            // console.log(routes);
         }
 
     },
@@ -274,14 +138,6 @@ var MeechInitilazer = (function ( core, $, _ ) {
             
             var _self = this;
             
-            $(window).scroll(function() {
-                if( $(this).scrollTop() > 100 ) {
-                    _self.elScroll.fadeIn();
-                } else {
-                    _self.elScroll.fadeOut();
-                }
-            });
-
             _self.elScroll.on('click', function() {
                 $('html, body').animate({
                     scrollTop:0

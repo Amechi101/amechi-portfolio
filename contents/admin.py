@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from contents.models import Project, Role, Technologies, Photography, Track
+from contents.models import Project, Role, Technologies, Track
 
 
 # Inline 
@@ -30,9 +30,6 @@ class TechnologiesAdmin(admin.ModelAdmin):
 	list_display = ("get_parents", "technologies")
 
 
-class PhotographyAdmin(admin.ModelAdmin):
-	list_per_page = 10
-
 class TrackAdmin(admin.ModelAdmin):
 	list_per_page = 10
 
@@ -40,6 +37,5 @@ class TrackAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Role, RoleAdmin)
 admin.site.register(Technologies, TechnologiesAdmin)
-admin.site.register(Photography, PhotographyAdmin)
 admin.site.register(Track, TrackAdmin)
 
