@@ -860,6 +860,10 @@ h1 {
     word-spacing:2px
 }
 
+.project .projectWrapper .projectRole + .projectTech {
+   padding-top:12px
+}
+
 @media only screen and (max-width:640px) {
    .project .projectWrapper .projectExtra p{
        display:block;
@@ -975,8 +979,8 @@ h1 {
 
 .photography .photo-grid .content {
     position:absolute;
-    height:80%; /* = 100% - 2*10% padding */
-    width:100%; /* = 100% - 2*5% padding */
+    height:100%; 
+    width:100%; 
     padding: 10% 5%;
     text-align: center;
 }
@@ -987,6 +991,17 @@ h1 {
     height:100%;
     width:100%;
 }
+
+.photography .photo-grid .photo-table:before{
+   content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:rgba(0,0,0,0.85);
+}
+
 
 .photography .photo-grid .table-cell{
     display:table-cell;
@@ -1044,6 +1059,7 @@ h1 {
     width:100%;
     z-index:0;
     display:block;
+   background-color:#000;
     -webkit-transition:all 0.3s ease-in;
     transition:all 0.3s ease-in;
     left:0%;
@@ -1075,8 +1091,9 @@ h1 {
 
 
 .photography .table-cell label{
-    font-weight:bold;
+    font-weight:500;
     font-size:24px;
+    text-transform: uppercase;
     letter-spacing:1px;
     color:#fff;
     -webkit-transition:all .3s ease;

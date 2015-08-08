@@ -20,14 +20,18 @@
         </div>
 
         <div class="projectExtra">
-            <h5>Role</h5>
-            {% for role in project_info.role_set.all %}
-                <p>- {{role}}</p>
-            {% endfor %}
+            <div class="projectRole">  
+                <h5>Role</h5>
+                {% for role in project_info.role_set.all %}
+                    <p>- {{role}}</p>
+                {% endfor %}
+            </div>
+            <div class="projectTech">  
             <h5>Tech</h5>
-            {% for tech in project_info.technologies_set.all %}
-                <p>- {{tech}}</p>
-            {% endfor %} 
+                {% for tech in project_info.technologies_set.all %}
+                    <p>- {{tech}}</p>
+                {% endfor %} 
+            </div>
         </div>
              
         <a class="meechBtn" href="{{project_info.project_url}}" target="_blank">View Project</a>

@@ -64,7 +64,7 @@ class Photo(models.Model):
         verbose_name_plural = _('Photos')
 
     def __unicode__(self):
-        return "{0}".format(self.photo_location)
+        return "{0}".format(self.photography)
 
 
     def get_photo_location(self):

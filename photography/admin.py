@@ -12,8 +12,8 @@ class PhotographyAdmin(admin.ModelAdmin):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-	list_display = ["photo_location"]
-	search_fields = ["photo_location"]
+	list_display = ["photography","photo","id"]
+	search_fields = ["id"]
 	list_per_page = 10
 
 
