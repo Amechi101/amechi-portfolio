@@ -143,3 +143,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,"static")
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
 
+# old ip address for page
+# 208.91.197.27 

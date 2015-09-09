@@ -41,11 +41,11 @@ var MeechInitilazer = (function ( core, $, _ ) {
         },
         create: function() {
         
-            this.iconTline = $('<span class="line tline" />').css({top:'20%'}).appendTo(this.menuIcon);
-            this.iconMline = $('<span class="line mline" />').css({top:'50%'}).appendTo(this.menuIcon);
-            this.iconBline = $('<span class="line bline" />').css({top:'80%'}).appendTo(this.menuIcon);
+            this.iconTline = $('<span class="line tline"></span>').css({top:'20%'}).appendTo(this.menuIcon);
+            this.iconMline = $('<span class="line mline"></span>').css({top:'50%'}).appendTo(this.menuIcon);
+            this.iconBline = $('<span class="line bline"></span>').css({top:'80%'}).appendTo(this.menuIcon);
             
-            this.menuIcon.append($('<div class="icon-bounds" >'));
+            this.menuIcon.append($('<div class="icon-bounds"></div>'));
 
             // close icon
             this.iconTimeline = new TimelineMax({ tweens:[
@@ -76,7 +76,7 @@ var MeechInitilazer = (function ( core, $, _ ) {
                 }, this),
                 onReverseComplete:_.bind(function () {
                     this.tween = false;
-                    this.menuHeader.css({position:'relative',height:'0%'});
+                    this.menuHeader.css({position:'relative', height:'0%'});
                     this.siteBody.css({overflow:'visible'});
                 }, this) });
 
@@ -151,7 +151,3 @@ var MeechInitilazer = (function ( core, $, _ ) {
     return core;
     
 })( MeechInitilazer || {}, jQuery, _ );
-
-
-
-
