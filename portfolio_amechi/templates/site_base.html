@@ -5,20 +5,19 @@
     
 {% block style_base %}
     
-    <!-- Stylesheets for Unlabel -->
+    <!-- Vendor Stylesheets -->
     <link rel="stylesheet" href="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898829/base.min_xqufcv.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.min.css" />
-    <link rel="stylesheet" href="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898908/site_ptf3xa.css" />
 
-    <!-- dev -->
-    <!-- <link rel="stylesheet" href="{# static "css/core/site.css" #}" /> -->
+
+    <!-- Amechi's Stylesheets -->
+    <link rel="stylesheet" href="{% static "css/site.css" %}" />
     
     {% block extra_style %}{% endblock %}
 {% endblock %}
 
 
 {% block top_script_base %}
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898956/modernizr.custom.min_pbmsqh.js"></script>
     {% block top_script_extra %} {% endblock %}
 {% endblock %}
 
@@ -28,22 +27,15 @@
 
 
 {% block script_base %}
+    <!-- External Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>  
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.min.js"></script>  
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898708/underscore-min_comygj.js"></script> 
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898708/classie_m760xo.js"></script>
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898708/masonry.pkgd.min_lbbyri.js"></script>
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898708/imagesloaded_qev3ck.js"></script>
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898708/AnimOnScroll_gxfap6.js"></script>
-    <script src="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441899068/site_hj9gfc.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.js"></script>
     
-    <!-- dev -->
-    <!-- <script src="{# static "js/core/site.js" #}"></script> -->
-    <script>
-		MeechInitilazer.menuApi.init();
-        MeechInitilazer.scrollTopApi.init();
-	</script>
+    <!-- Amechi's Scripts -->
+    <script src="{% static "js/site.js" %}"></script>
+
     <script>
         ;(function($) {
             $(".animsition").animsition({
@@ -66,6 +58,8 @@
                 overlayClass          :   'animsition-overlay-slide',
                 overlayParentElement  :   'body'
             });
+
+            $(".meech-content h2, .meech-content .meech-links a").fitText(1.0,  { minFontSize: '50px', maxFontSize: '75px' });
         })(jQuery);
     </script>
  

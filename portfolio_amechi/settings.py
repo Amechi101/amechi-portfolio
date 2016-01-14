@@ -54,8 +54,6 @@ INSTALLED_APPS = (
 
     # project
     'portfolio_amechi',
-    'contents',
-    'photography',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,7 +72,7 @@ ROOT_URLCONF = 'portfolio_amechi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['portfolio_amechi/templates', 'contents/templates'],
+        'DIRS': ['portfolio_amechi/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,9 +84,6 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.core.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-
-                # Externally Added
-                'portfolio_amechi.context_processors.consts',
             ],
         },
     },
@@ -102,17 +97,10 @@ WSGI_APPLICATION = 'portfolio_amechi.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": "django.db.backends.postgresql_psycopg2", # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        "NAME":"",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-# Parse database configuration from $DATABASE_URL
-if not os.environ.has_key('DATABASE_URL'):
-    os.environ['DATABASE_URL'] = 'postgres://bjqakwgbwwpiku:1-qViTnwizGjnUSgy8ayKvbsZi@ec2-107-22-175-206.compute-1.amazonaws.com:5432/d8hcvi0iaeg64n'
-
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
 
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()

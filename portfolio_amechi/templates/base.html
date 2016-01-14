@@ -6,9 +6,9 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="The portfolio of a native New Yorker with Nigerian roots and an alumnus of the University Of Southern California. Seeking the best knowledge he can find around the world."></meta>
+        <meta name="description" content="Thank You."></meta>
         <meta name="author" content="Amechi Egbe"></meta>
-        <meta name="keywords" content="Portfolio, Technology, Track & Field, USC, Photopgraphy, Nigeria">
+        <meta name="keywords" content="Amechi Egbe">
         
         <title>{% block head_title_base %}Amechi Egbe | {% block head_title %}{% endblock %}{% endblock %}</title>
 
@@ -40,56 +40,10 @@
     </head>
     <body class="{% block body_class %}{% endblock %}"> 
         
-        <div id="meechWrapper" class="animsition">            
-            {% block topbar_base %}
-                <header id="meechHeader">
-                    <div id="nav-icon"></div>
-                    <div id="panel">
-                        <div class="nav-cont">
-                            <div class="v-align">
-                                <ul id="main-nav">
-                                    <li><a class="menu-link" href="/" data-type="page-transition">Home</a></li>
-                                    <li><a class="menu-link" href="/about" data-type="page-transition">About</a></li>
-                                    <li><a class="menu-link" href="/projects">Projects</a></li>
-                                    <li><a class="menu-link" href="/track">Track & Field</a></li>
-                                    <li><a class="menu-link" href="/photography">Photography</a></li>
-                                    <li><a class="menu-link" href="mailto:amechiegbe@gmail.com">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-            {% endblock %}
-            
-            
-            <!-- global site content -->
+        <div  class="container animsition">            
             {% block body_base %}
-                <main id="meechInnerWrapper" role="main">
-                    <div class="mainContent">
-                        <div class="sqs-layout">
-                            <div class="row sqs-row">
-                                <div class="col sqs-col-12">
-                                    <div class="sqs-switch-content">
-                                        <div class="sqs-block">
-                                            <div class="sqs-block-content">
-                                                <h1 class="meechHeading">
-                                                    {% block banner_title %}{% endblock %}
-                                                </h1>
-                                            </div>
-                                        </div>
-                                        {% block body %}{% endblock %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+                {% block body %}{% endblock %}
             {% endblock %}
-
-            {% block footer_base %}
-                {% block footer %}{% include "_footer.html" %}{% endblock %}
-            {% endblock %}
-
         </div>
 
         <!-- JavaScript

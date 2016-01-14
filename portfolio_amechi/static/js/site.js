@@ -11,7 +11,7 @@
 "use strict";
 
 //To avoid namespace collision
-var MeechInitilazer = (function ( core, $, _ ) {
+var MeechInitilazer = (function ( core, $ ) {
 
     /***
      *Public Access
@@ -150,4 +150,4 @@ var MeechInitilazer = (function ( core, $, _ ) {
     //Return Public Method
     return core;
     
-})( MeechInitilazer || {}, jQuery, _ );
+})( MeechInitilazer || {}, jQuery);
