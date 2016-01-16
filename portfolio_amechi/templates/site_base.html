@@ -4,14 +4,40 @@
 {% load i18n %}
     
 {% block style_base %}
-    
     <!-- Vendor Stylesheets -->
-    <link rel="stylesheet" href="http://res.cloudinary.com/dgnor2lpz/raw/upload/v1441898829/base.min_xqufcv.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/css/animsition.min.css" />
-
-
+    <link rel="stylesheet" href="{% static "css/vendor/base.min.css" %}" />
+    
     <!-- Amechi's Stylesheets -->
     <link rel="stylesheet" href="{% static "css/site.css" %}" />
+
+    <!-- Icon links -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "images/icon_logo/favicon.ico" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "images/icon_logo/favicon-16x16.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "images/icon_logo/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static "images/icon_logo/favicon-96x96.png" %}">
+    
+    <!-- non-retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static "images/icon_logo/apple-icon-57x57.png.png" %}">
+    
+    <!-- non-retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static "images/icon_logo/apple-icon-60x60.png" %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static "images/icon_logo/apple-icon-72x72.png" %}">
+    
+    <!-- non-retina iPad iOS 7 -->
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static "images/icon_logo/apple-icon-76x76.png" %}">
+    
+    <!-- retina iPhone pre iOS 7 -->
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static "images/icon_logo/apple-icon-114x114.png" %}">
+    
+    <!-- retina iPhone iOS 7 -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static "images/icon_logo/apple-icon-120x120.png" %}">
+    
+    <!-- retina iPad pre iOS 7 -->
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static "images/icon_logo/apple-icon-144x144.png" %}">
+    
+    <!-- retina iPad iOS 7 -->
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static "images/icon_logo/apple-icon-152x152.png" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "images/icon_logo/apple-icon-180x180.png" %}">
     
     {% block extra_style %}{% endblock %}
 {% endblock %}
@@ -28,43 +54,26 @@
 
 {% block script_base %}
     <!-- External Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>  
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/3.5.2/js/jquery.animsition.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.js"></script>
     
     <!-- Amechi's Scripts -->
+    <script src="{% static "js/transitionScroll.js" %}"></script>
     <script src="{% static "js/site.js" %}"></script>
-
+    
+    <!-- Intializers -->
     <script>
+        MainModule.utils.googleEvents();
+        
         ;(function($) {
-            $(".animsition").animsition({
-                inClass               :   'fade-in-up-sm',
-                outClass              :   'fade-out-up-sm',
-                inDuration            :    700,
-                outDuration           :    800,
-                linkElement           :   '.animsition-link',
-                // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
-                loading               :    true,
-                loadingParentElement  :   'body', //animsition wrapper element
-                loadingClass          :   'animsition-loading',
-                unSupportCss          : [ 'animation-duration',
-                                          '-webkit-animation-duration',
-                                          '-o-animation-duration'
-                                        ],
-                //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-                //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-                overlay               :   false,
-                overlayClass          :   'animsition-overlay-slide',
-                overlayParentElement  :   'body'
-            });
+            $("#meech-content, #meech-links").transitionScroll({
+                selector:'h2'
+            }); 
 
-            $(".meech-content h2, .meech-content .meech-links a").fitText(1.0,  { minFontSize: '50px', maxFontSize: '75px' });
+            $("#meech-content > h2, #meech-links > h2").fitText(1.0,  { minFontSize: '50px', maxFontSize: '75px' });
         })(jQuery);
     </script>
- 
-
-    {% block extra_script %}{% endblock %}
 
     <!-- Adobe Typeface -->
     <script src="//use.typekit.net/cbg5xhv.js"></script>
@@ -80,6 +89,5 @@
         ga('create', 'UA-61999157-2', 'auto');
         ga('send', 'pageview');
     </script>
-
 {% endblock %}
 

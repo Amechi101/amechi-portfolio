@@ -4,32 +4,34 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Home" %}{% endblock %}
+{% block head_title %}{% trans "Welcome." %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block body %}    
-    <article class="meech-content">
-        <!-- content -->
-        <h2 class="name">Amechi Maduabuchi Egbe<h2>
-        <h2>First Generation <span>Nigerian-American</span></h2>
-        <h2>Engineer</h2>
-        <h2><span>Track Athlete</span></h2>
-        <h2>Dancer Hobbyist</h2>
-        <h2>Photography Enthusiast</h2>
-        <h2><span>Creative Junkie</span></h2>
-        <h2>Avid Supporter of <span>Free Friendship</span></h2>
-        <h2>University Of Southern California <span>Alum.</span></h2> 
-        
-        <!-- links -->
-        <div class="meech-links">
-            <h2><a href="https://github.com/Amechi101">Code</a></h2>
-            <h2><a href="#">Photography</a></h2> 
-            <h2><a href="mailto:amechiegbe@gmail.com">Let's chat.</a></h2>
-        </div>
-    </article>       
+    <!-- content -->
+    <div id="meech-content">
+        <h2 class="name scrolling-up">Amechi Maduabuchi Egbe<h2>
+        <h2 class="scrolling-left">First Generation <span>Nigerian-American</span></h2>
+        <h2 class="scrolling-right">Engineer</h2>
+        <h2 class="scrolling-left"><span>Track Athlete</span></h2>
+        <h2 class="scrolling-right">Photographer Hobbyist</h2>
+        <h2 class="scrolling-left"><span>Dancer</span> Enthusiast</h2>
+        <h2 class="scrolling-right">Avid Supporter of <span>Free Friendship</span></h2>
+        <h2 class="scrolling-left">University Of Southern California <span>Alum.</span></h2> 
+    </div>
+    
+    <!-- links -->
+    <div id="meech-links">
+        <h2 class="scrolling-left"><a  target="_blank" href="https://github.com/Amechi101">Code</a></h2>
+        <h2 class="scrolling-right"><a target="_blank" href="http://www.awwwards.com/amechi.egbe/">Awwwards</a></h2>
+        <h2 class="scrolling-left"><a target="_blank" href="http://the-meech-101.tumblr.com/">Photography</a></h2> 
+        <h2 class="scrolling-right"><a target="_blank" href="mailto:amechiegbe@gmail.com">Let's chat</a></h2>
+    </div>
+    
+    <!-- Footer -->
     <footer id="footer">
-        <h2 class="align-center">Made With <span class="icon-heart"></span> In NYC.</h2>
-     </footer>    
+        <h2>Made With <span class="icon-heart"></span> In NYC.</h2>
+    </footer>    
 {% endblock %}  
 
