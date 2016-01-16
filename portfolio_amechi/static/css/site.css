@@ -43,8 +43,9 @@ body {
 }
 
 body.home {
-    margin-top:50px;
+  margin-top:20px;
 }
+
 
 
 /******** Transitions ***********/
@@ -124,7 +125,7 @@ body.home {
 
 #meech-links {
     position:relative;
-    padding: 120px 0;
+    padding: 50px 0;
 }
 
 #meech-links a {
