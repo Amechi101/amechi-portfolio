@@ -137,7 +137,7 @@
         * Default functionality when scrolling up. Overwritten in settings
         */
         onScrollUp: function($element) {
-            $element.removeClass('in-view');
+            // $element.removeClass('in-view');
         },
          
         /**

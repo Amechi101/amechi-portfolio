@@ -43,7 +43,7 @@ body {
 }
 
 body.home {
-    margin:70px 0;
+    margin-top:50px;
 }
 
 
@@ -124,7 +124,7 @@ body.home {
 
 #meech-links {
     position:relative;
-    margin:100px 0;
+    padding: 120px 0;
 }
 
 #meech-links a {
