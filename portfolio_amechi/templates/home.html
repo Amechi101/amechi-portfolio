@@ -4,43 +4,34 @@
 {% load staticfiles %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Welcome." %}{% endblock %}
+{% block head_title %}{% trans "Always and Forever a Student Athlete." %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block body %}    
-    <!-- content -->
-    <div id="meech-content">
-        <h2>My Name is<h2>
-        <h2 class="name">Amechi Maduabuchi Egbe<h2>
-        <h2><span>I am a</span></h2>
-        <h2><span>New York</span> Born</h2>
-        <h2>First Generation <span>Nigerian-American</span></h2>
-        <h2>Track &amp; Field Athlete</h2>
-        <h2><span>Aspiring Olympian</span></h2>
-        <h2>Photographer Hobbyist</h2>
-        <h2><span>Dancer</span> Enthusiast</h2>
-        <h2>Avid Supporter of <span>Free Friendship</span></h2>
-        <h2>Former <span>Pre-Med</span></h2> 
-        <h2>Student &amp; <span>Division I Athlete</span></h2>
-        <h2>With a degree in</h2>
-        <h2><span>Neuroscience</span></h2>
-        <h2>From The</h2>
-        <h2><span>University</span> Of Southern<span>California.</span></h2> 
-    </div>
-    
-    <!-- links -->
-    <div id="meech-links">
-        <h2 class="scrolling-left"><a target="_blank" href="https://github.com/Amechi101">Code</a></h2>
-        <h2 class="scrolling-right"><a target="_blank" href="https://angel.co/amechi-egbe">AngelList</a></h2>
-        <h2 class="scrolling-left"><a target="_blank" href="http://www.awwwards.com/amechi.egbe/">Awwwards</a></h2>
-        <h2 class="scrolling-right"><a target="_blank" href="http://the-meech-101.tumblr.com/">Photography</a></h2> 
-        <h2 class="scrolling-left"><a target="_blank" href="mailto:amechiegbe@gmail.com">Let's chat</a></h2>
-    </div>
-    
-    <!-- Footer -->
-    <footer id="footer">
-        <h2>Made With <span class="icon-heart"></span> In NYC.</h2>
-    </footer>    
+    <!-- Content -->
+    <section class="home-text">
+        <div class="home-text-inner">
+            
+            <!-- Text --> 
+            <p>
+                Alumnus with a B.A. in Neuroscience &amp; Former NCAA Division I Track &amp; Field Athlete at the <a target="_blank" href="http://www.usc.edu/">University of Southern California</a> -- Native New Yorker with Queens roots -- First Generation Nigerian-American -- Former web developer at <a target="_blank" href="http://www.complex.com/">Complex Magazine</a> &amp; <a target="_blank" href="http://ymee.us/">YMEE</a> -- Current Freelance Web Developer -- Founder of <a target="_blank" href="https://unlabel.us">Unlabel</a> -- Track &amp; Field Athlete at <a href="https://www.instagram.com/ctsperformance/">CTS Performance</a> -- Aspiring <a target="_blank" href="https://en.wikipedia.org/wiki/2020_Summer_Olympics">Olympic</a> Sprinter -- Lover of legos -- Freestyle hip-hop dancer &amp; <a target="_blank" href="http://the-meech-101.tumblr.com/">Photographer</a> hobbyist.
+            </p>
+
+            <!-- Links -->
+            <ul>
+                <li><a target="_blank" href="https://www.instagram.com/the_meech_">Instagram</a></li> 
+                <li><a target="_blank" href="https://github.com/Amechi101">Code</a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/in/amechiegbe">Linkedin</a></li>
+                <li><a target="_blank" href="https://angel.co/amechi-egbe">AngelList</a></li>
+                <li><a target="_blank" href="mailto:amechiegbe@gmail.com">Let's chat</a></li>
+            </ul>
+
+            <!-- Footer -->
+            <footer>
+                <h2>Made With <span class="icon-heart"></span> In NYC</h2>
+            </footer>  
+        </div> 
+    </section> 
 {% endblock %}  
 
