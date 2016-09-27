@@ -17,7 +17,7 @@ var MainModule = (function ( core, $ ) {
     ****/ 
     core.utils = {
         googleEvents: function() {
-            $('#meech-links a').on('click', function( event ) {
+            $('.home .home-text > .home-text-inner a').on('click', function( event ) {
                 var $item = $(this);
                 var $itemText = $item.text();
 
