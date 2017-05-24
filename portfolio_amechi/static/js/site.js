@@ -1,10 +1,9 @@
 /* ===========================================================
- * Main Module.js
+ * Main Module
  * ===========================================================
  * Copyright 2016 Amechi Egbe.
  * http://www.amechiegbe.com
  *
- * amechiegbe@gmail.com
  *
  * ========================================================== */
 
@@ -12,9 +11,6 @@
 
 var MainModule = (function ( core, $ ) {
 
-    /***
-    Helper utils functions that dont require their own module (enter below)
-    ****/ 
     core.utils = {
         googleEvents: function() {
             $('.home .home-text > .home-text-inner a').on('click', function( event ) {
