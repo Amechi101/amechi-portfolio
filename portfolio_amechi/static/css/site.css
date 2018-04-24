@@ -181,6 +181,11 @@ ul,li {
     font-family: "NeutraFace2TextBook";
 }
 
+.home .home-text > .home-text-inner > p > span:not(:last-of-type):after {
+    content:"--";
+    padding:0 10px; 
+}
+
 /* links */
 .home .home-text > .home-text-inner ul {
     margin: 50px 0;
